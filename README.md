@@ -23,6 +23,80 @@ Finalmente, considerar (al menos) estos objetos:
   - un _muñeco_ celeste de vidrio, de peso variable.
   - una _placa_ de cobre, de peso y color variables.
 
+RESOLUCIÓN:
+/* colores */
+object rojo { method esFuerte() { return true } }
+object verde { method esFuerte() { return true } }  // completar
+object celeste { method esFuerte() { return false } }  // completar
+object parda { method esFuerte() { return false } }  // completar
+
+/* materiales */
+object lino { method brilla() { return false } }
+object vidrio { method brilla() { return true } }
+object cobre { method brilla() { return true } }
+object madera { method brilla() { return false } }
+object cuero { method brilla() { return false } }
+// agregar: cobre, madera, cuero
+
+/* objetos */
+object remera {
+	method color() { return rojo }
+	method material() { return lino }
+	method peso() { return 800 }
+}
+
+object pelota {
+	method color() { return parda }  // completar
+	method material() { return cuero }  // completar
+	method peso() { return 1300 }  // completar
+}
+
+object munieco {
+	var peso 
+	
+	method color() { return celeste }
+	method material() { return vidrio }
+	method peso() { return peso }
+	// usar siempre setPeso y setColor para setear los nuevos peso y color, respectivamente.
+	method setPeso(pesoNuevo) { peso = pesoNuevo }
+}
+object placa {
+	var color
+  var peso
+	
+	method color() { return color }
+	method material() { return cobre }
+	method peso() { return peso }
+	// usar siempre setPeso y setColor para setear los nuevos peso y color, respectivamente.
+	method setColor(colorNuevo) { color = colorNuevo   }
+  method setPeso(pesoNuevo) { peso = pesoNuevo }
+}
+object biblioteca {
+	method color() { return verde }  // completar
+	method material() { return madera }  // completar
+	method peso() { return 8000 }  // completar
+// agregar biblioteca y placa
+}
+
+object estefania {
+	method leGusta(objeto) { return objeto.color().esFuerte() }
+}
+
+object rosa {
+	method leGusta(objeto) { return
+  objeto.peso() <= 2000}  // completar
+}
+object luisa {
+  method leGusta(objeto){ return objeto.material().brilla()}
+}
+
+object juan {
+  method leGusta(objeto){ return not objeto.color().esFuerte() or  (  objeto.peso() >= 1200 and objeto.peso() <= 2000  )
+  }
+}
+
+// agregar luisa y juan
+
 
 ## Bolichito
 
